@@ -12,7 +12,7 @@ npm i
 <li>
 Create the interface. notice that we have a nested interface and annotation !!!!
 
-```
+```ts
 interface IPet {
   name: string;
   /**
@@ -42,7 +42,7 @@ npx typescript-json-validator ./src/interfaces/IPerson.ts IPerson
 
 Following is the resulting schema
 
-```
+```json
 export const IPersonSchema = {
   "$schema": "http://json-schema.org/draft-07/schema#",
   // "defaultProperties": [
@@ -94,7 +94,7 @@ export const IPersonSchema = {
 <li>
 Invoke the ajv validator
 
-```
+```ts
 const ajv = new Ajv();
 const valid = ajv.validate(IPersonSchema, person)
 if(!valid){
