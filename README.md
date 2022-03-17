@@ -1,5 +1,5 @@
 <h2>Motivation</h2>
-Create a validator function from the typescript interface. here typescript-json-validator is used
+Create an validator function from the typescript interface. here typescript-json-validator is used. 
 
 <h2>Installation</h2>
 
@@ -45,6 +45,16 @@ if(!valid){
 ```
 
 </li>
+
+<li>
+Run and open the browser 
+
+```
+npm run dev
+```
+
+</li>
+
 </ul>
 <h2>Limitation</h2>
 The resulting IPerson.validator.ts has many errors. However, the schema is almost perfect just remove defaultProperties
