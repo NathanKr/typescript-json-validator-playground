@@ -10,10 +10,19 @@ npm i
 <h2>Usage</h2>
 <ul>
 <li>
-Create the interface. notice that we have a nested interface
+Create the interface. notice that we have a nested interface and annotation !!!!
 
 ```
-interface IPerson {
+interface IPet {
+  name: string;
+  /**
+   * @minimum 1
+   * @maximum 100
+   */
+  legs: number;
+}
+
+export default interface IPerson {
   name: string;
   age?: number;
   pets: IPet[];
@@ -29,6 +38,56 @@ Create a validator : IPerson.validator.ts from interface IPerson in file : IPers
 
 ```
 npx typescript-json-validator ./src/interfaces/IPerson.ts IPerson
+```
+
+Following is the resulting schema
+
+```
+export const IPersonSchema = {
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  // "defaultProperties": [
+  // ],
+  "definitions": {
+    "IPet": {
+      // "defaultProperties": [
+      // ],
+      "properties": {
+        "legs": {
+          "maximum": 100,
+          "minimum": 1,
+          "type": "number"
+        },
+        "name": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "legs",
+        "name"
+      ],
+      "type": "object"
+    }
+  },
+  "properties": {
+    "age": {
+      "type": "number"
+    },
+    "name": {
+      "type": "string"
+    },
+    "pets": {
+      "items": {
+        "$ref": "#/definitions/IPet"
+      },
+      "type": "array"
+    }
+  },
+  "required": [
+    "name",
+    "pets"
+  ],
+  "type": "object"
+};
 ```
 
 </li>
@@ -58,3 +117,14 @@ npm run dev
 </ul>
 <h2>Limitation</h2>
 The resulting IPerson.validator.ts has many errors. However, the schema is almost perfect just remove defaultProperties
+
+
+<h2>Open issues</h2>
+What is the following  ? typescript ? ajv ?
+
+```
+/**
+   * @minimum 1
+   * @maximum 100
+*/
+```

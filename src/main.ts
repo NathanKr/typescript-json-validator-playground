@@ -11,7 +11,7 @@ const app = document.querySelector<HTMLDivElement>("#app")!;
 
 const person: IPerson = {
   name: "Jim",
-  pets: [{ name: "dog", legs: 4 }],
+  pets: [{ name: "dog", legs: 101 }],
 };
 
 const valid = ajv.validate(IPersonSchema, person)
