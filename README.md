@@ -40,8 +40,12 @@ npx typescript-json-validator ./src/interfaces/IPerson.ts IPerson
 
 Following is the resulting schema
 
+```ts
+export const IPersonSchema =
+```
+
 ```json
-export const IPersonSchema = {
+ {
   "$schema": "http://json-schema.org/draft-07/schema#",
   "definitions": {
     "IPet": {
