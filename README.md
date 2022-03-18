@@ -85,7 +85,7 @@ export const IPersonSchema =
     "pets"
   ],
   "type": "object"
-};
+}
 ```
 
 </li>
