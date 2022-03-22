@@ -4,6 +4,7 @@
   "version": "0.0.0",
   "scripts": {
     "dev": "vite",
+    "create-validator": "typescript-json-validator ./src/interfaces/IPerson.ts IPerson",
     "build": "tsc && vite build",
     "preview": "vite preview"
   },

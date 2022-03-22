@@ -113,7 +113,10 @@ npm run dev
 </ul>
 
 <h2>Points of interest</h2>
-typescript-json-validator main dependencies are : ajv and typescript-json-schema
+<ul>
+<li>typescript-json-validator main dependencies are : ajv and typescript-json-schema</li>
+<li>altough the created validator file - IPerson.validator.ts has many errors it worth understanding how he is able to create it automatically</li>
+</ul>
 
 <h2>Limitation</h2>
 The resulting IPerson.validator.ts has many errors. However, the schema is almost perfect just remove defaultProperties
@@ -133,5 +136,5 @@ What is the following  ? typescript ? ajv ?
 <li>
 typescript-json-validator has options e.g.  --useNamedExport but is was not able to find it in code
 </li>
-
+<li>I as able to add create-validator script but not add it to other scripts</li>
 </ul>
